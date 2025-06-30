@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+    --primary: #231e64;
+    --accent: #03d3b0;
+    --secondary: #ecb44b;
+    --enfasis: #7ed3a5;
+    --black-80: #1A1A1A;
+    --text-color: #000000;
+    --black-90: hsl(0, 0%, 10%);
+    --black-70: hsl(0, 0%, 30%);
+    --white: hsl(0, 0%, 100%);
+    --white-alpha-40: hsla(0, 0%, 100%, 0.4);
+    --white-alpha-50: hsla(0, 0, 100%, 0.5);
+    --font-sans: 'Montserrat', Arial, Helvetica, sans-serif;
+    --font-mono: 'Questrial', Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  @keyframes infinite-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  .animate-infinite-scroll {
+    animation: infinite-scroll 25s linear infinite;
+  }
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --color-accent: var(--accent);
+    --color-secondary: var(--secondary);
+    --color-enfasis: var(--enfasis);
+    --color-black-80: var(--black-80);
+    --color-text: var(--text-color);
+    --color-black-90: var(--black-90);
+    --color-black-70: var(--black-70);
+    --color-white: var(--white);
+    --color-white-alpha-40: var(--white-alpha-40);
+    --color-white-alpha-50: var(--white-alpha-50);
+    --font-sans: var(--font-montserrat);
+    --font-primary: var(--font-questrial);
+  }
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono), Arial, Helvetica, sans-serif;
+}
